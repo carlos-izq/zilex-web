@@ -362,8 +362,8 @@ a { color: inherit; text-decoration: none; }
   .services, .process, .about { padding: 80px 18px; }
   .faq { padding: 40px 18px 90px; }
 
-  /* Banda vertical más compacta en móvil */
-  .band__img { width: 175px; height: 250px; }
+  /* Banda vertical en móvil (un poco más grande) */
+  .band__img { width: 215px; height: 305px; }
 
   /* Servicios: tarjetas que se apilan al hacer scroll (estilo Framer) */
   .services__grid { display: block; }
