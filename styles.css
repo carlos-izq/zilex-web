@@ -344,6 +344,34 @@ a { color: inherit; text-decoration: none; }
 .faq__answer { padding: 0 26px 24px; }
 .faq__answer p { color: var(--muted); line-height: 1.65; max-width: 660px; }
 
+/* =================== CAMPAIGNS (rejilla secuencia) =================== */
+.camp { padding: 120px 32px; max-width: var(--maxw); margin: 0 auto; }
+.camp .section-head { margin-bottom: 56px; }
+.camp__tabs { display: flex; gap: 12px; margin-top: 34px; flex-wrap: wrap; }
+.camp__tab { padding: 12px 22px; border-radius: 100px; border: 1px solid var(--line-2); background: var(--bg-2); color: var(--muted); font-weight: 600; font-size: 0.9rem; font-family: inherit; cursor: pointer; transition: transform 0.3s var(--ease), background 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+.camp__tab:hover:not(:disabled) { transform: translateY(-2px); color: var(--white); border-color: var(--white); }
+.camp__tab.is-active { background: var(--orange); border-color: var(--orange); color: #fff; }
+.camp__tab.is-soon { opacity: 0.4; cursor: not-allowed; }
+
+.camp__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.camp__item { position: relative; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); aspect-ratio: 3 / 4; background: var(--bg-2); }
+.camp__item:nth-child(even) { margin-top: 36px; }
+.camp__item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s var(--ease); }
+.camp__item:hover img { transform: scale(1.05); }
+.camp__item::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,11,0.3), transparent 26%, transparent 54%, rgba(10,10,11,0.9)); }
+.camp__item figcaption { position: absolute; inset: 0; z-index: 2; padding: 18px; display: flex; flex-direction: column; justify-content: space-between; text-shadow: 0 1px 10px rgba(0,0,0,0.5); }
+.camp__num { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; }
+.camp__tag { font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); }
+.camp__item--final { border-color: rgba(255,91,30,0.55); }
+.camp__item--final .camp__tag { color: var(--orange); }
+/* Origen: la prenda como packshot sobre panel claro */
+.camp__item--origin { background: #f1efec; border-color: rgba(255,255,255,0.22); }
+.camp__item--origin img { object-fit: contain; padding: 9% 11%; }
+.camp__item--origin::after { display: none; }
+.camp__item--origin figcaption { text-shadow: none; }
+.camp__item--origin .camp__num { color: #0a0a0b; }
+.camp__item--origin .camp__tag { color: var(--orange); }
+
 /* =================== REVEAL ANIMATION =================== */
 .reveal { opacity: 0; transform: translateY(34px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
 .reveal.in { opacity: 1; transform: translateY(0); }
@@ -352,6 +380,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 1000px) {
   .services__grid { grid-template-columns: repeat(2, 1fr); }
   .work__grid { grid-template-columns: repeat(2, 1fr); }
+  .camp__grid { grid-template-columns: repeat(2, 1fr); }
   .about__grid { grid-template-columns: 1fr; gap: 40px; }
   .about__media { max-width: 440px; }
 }
@@ -359,7 +388,9 @@ a { color: inherit; text-decoration: none; }
   .nav { padding: 14px 16px; }
   .nav__links { display: none; }
   .nav.scrolled { padding: 10px 16px; }
-  .services, .process, .about { padding: 80px 18px; }
+  .services, .process, .about, .camp { padding: 80px 18px; }
+  .camp__grid { gap: 12px; }
+  .camp__item:nth-child(even) { margin-top: 24px; }
   .faq { padding: 40px 18px 90px; }
 
   /* Banda vertical en móvil (un poco más grande) */
