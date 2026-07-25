@@ -179,10 +179,6 @@ a { color: inherit; text-decoration: none; }
   max-width: 620px; margin: 0 auto 38px; line-height: 1.6;
 }
 .hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
-.hero__stats { display: flex; gap: 48px; justify-content: center; flex-wrap: wrap; text-shadow: 0 2px 18px rgba(0,0,0,0.85); }
-.stat { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-.stat strong { font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; color: var(--white); }
-.stat span { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; font-weight: 500; }
 
 /* Floating hero images */
 .hero__field { position: absolute; inset: 0; z-index: 1; }
@@ -215,19 +211,11 @@ a { color: inherit; text-decoration: none; }
 .hero__scroll-line::after { content:''; position:absolute; top:-50%; left:0; width:100%; height:50%; background: var(--white); animation: scrollDot 1.8s ease-in-out infinite; }
 @keyframes scrollDot { 0%{top:-50%} 100%{top:100%} }
 
-/* =================== MARQUEE =================== */
-.marquee-wrap { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 26px 0; background: var(--bg-2); }
-.marquee { overflow: hidden; white-space: nowrap; }
-.marquee__track { display: inline-flex; align-items: center; gap: 30px; animation: scrollX 26s linear infinite; }
-.marquee__track span { font-size: clamp(1.4rem, 3vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; text-transform: uppercase; color: var(--white); }
-.marquee__track .dot { color: var(--orange); font-size: 0.9rem; }
-@keyframes scrollX { to { transform: translateX(-50%); } }
-
 /* =================== BAND (dual scrolling gallery) =================== */
 .band { padding: 60px 0; display: flex; flex-direction: column; gap: 20px; overflow: hidden; }
 .band__row { display: flex; gap: 20px; width: max-content; }
-.band__row--up { animation: bandLeft 45s linear infinite; }
-.band__row--down { animation: bandRight 45s linear infinite; }
+.band__row--up { animation: bandLeft 90s linear infinite; }
+.band__row--down { animation: bandRight 90s linear infinite; }
 .band__img { width: 260px; height: 360px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); flex-shrink: 0; position: relative; }
 .band__img img { transition: transform 0.7s var(--ease); filter: saturate(1.02); }
 .band__img:hover img { transform: scale(1.06); }
@@ -415,7 +403,6 @@ a { color: inherit; text-decoration: none; }
   .footer__grid { grid-template-columns: 1fr; }
   .footer__tag { text-align: left; }
   .footer__top { align-items: flex-start; }
-  .hero__stats { gap: 30px; }
 }
 
 /* Reduced motion */
