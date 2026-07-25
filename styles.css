@@ -215,8 +215,8 @@ a { color: inherit; text-decoration: none; }
 .band { padding: 60px 0; display: flex; flex-direction: column; gap: 20px; overflow: hidden; }
 .band__row { display: flex; gap: 20px; width: max-content; }
 .band__row--single { animation: bandLeft 45s linear infinite; }
-.band__row--up { animation: bandLeft 70s linear infinite; }
-.band__row--down { animation: bandRight 70s linear infinite; }
+.band__row--up { animation: bandLeft 50s linear infinite; }
+.band__row--down { animation: bandRight 50s linear infinite; }
 .band__mobile-only { display: none; }
 .band__img { width: 260px; height: 360px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); flex-shrink: 0; position: relative; }
 .band__img img { transition: transform 0.7s var(--ease); filter: saturate(1.02); }
