@@ -214,15 +214,12 @@ a { color: inherit; text-decoration: none; }
 /* =================== BAND (dual scrolling gallery) =================== */
 .band { padding: 60px 0; display: flex; flex-direction: column; gap: 20px; overflow: hidden; }
 .band__row { display: flex; gap: 20px; width: max-content; }
-.band__row--single { animation: bandLeft 45s linear infinite; }
-.band__row--up { animation: bandLeft 50s linear infinite; }
-.band__row--down { animation: bandRight 50s linear infinite; }
+.band__row--single { animation: bandLeft 77s linear infinite; }
 .band__mobile-only { display: none; }
 .band__img { width: 260px; height: 360px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); flex-shrink: 0; position: relative; }
 .band__img img { transition: transform 0.7s var(--ease); filter: saturate(1.02); }
 .band__img:hover img { transform: scale(1.06); }
 @keyframes bandLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-@keyframes bandRight { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 
 /* =================== SERVICES =================== */
 .services { padding: 120px 32px; max-width: var(--maxw); margin: 0 auto; }
@@ -372,10 +369,19 @@ a { color: inherit; text-decoration: none; }
   .camp__grid { gap: 8px; }
   .faq { padding: 40px 18px 90px; }
 
-  /* Banda vertical en móvil (un poco más grande) */
-  .band__img { width: 215px; height: 305px; }
+  /* Banda en móvil: deslizable con el dedo, sin animación automática */
+  .band__img { width: 183px; height: 259px; }
   .band__desktop-only { display: none; }
-  .band__mobile-only { display: flex; }
+  .band__mobile-only {
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+  }
+  .band__mobile-only::-webkit-scrollbar { display: none; }
+  .band__mobile-only .band__img { scroll-snap-align: start; }
 
   /* Servicios: tarjetas que se apilan al hacer scroll (estilo Framer) */
   .services__grid { display: block; }
