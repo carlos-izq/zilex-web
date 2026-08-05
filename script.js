@@ -48,35 +48,6 @@ if (fine) {
   document.addEventListener('mouseleave', () => (glow.style.opacity = '0'));
 }
 
-/* ---- Hero parallax on floating images ---- */
-const floats = document.querySelectorAll('.float');
-let heroActive = true;
-const heroSection = document.querySelector('.hero');
-const heroObs = new IntersectionObserver(([e]) => (heroActive = e.isIntersecting));
-heroObs.observe(heroSection);
-
-if (fine) {
-  window.addEventListener('mousemove', (e) => {
-    if (!heroActive) return;
-    const mx = (e.clientX / window.innerWidth - 0.5);
-    const my = (e.clientY / window.innerHeight - 0.5);
-    floats.forEach((f) => {
-      const sp = parseFloat(f.dataset.speed || 0.1);
-      f.style.transform = `translate(${mx * sp * 120}px, ${my * sp * 120}px)`;
-    });
-  });
-}
-
-/* ---- Subtle scroll parallax for floats ---- */
-window.addEventListener('scroll', () => {
-  if (!heroActive) return;
-  const y = window.scrollY;
-  floats.forEach((f) => {
-    const sp = parseFloat(f.dataset.speed || 0.1);
-    f.style.marginTop = `${y * sp * 0.4}px`;
-  });
-}, { passive: true });
-
 /* ---- Band móvil: auto-scroll continuo, se pausa al tocar/deslizar con el dedo ---- */
 (() => {
   const rows = document.querySelectorAll('.band__mobile-only');
