@@ -1,13 +1,13 @@
 /* =================================================================
    ZILEX — Estudio creativo para e-commerce de moda y belleza
-   Paleta: negro #222222 / blanco / naranja #f66e1f
+   Paleta: negro puro #000000 / blanco / naranja #f66e1f
    Tipografía: Poppins (titulares y cuerpo)
    ================================================================= */
 
 :root {
-  --bg: #222222;
-  --bg-2: #2b2b2b;
-  --bg-3: #333333;
+  --bg: #000000;
+  --bg-2: #101010;
+  --bg-3: #181818;
   --white: #ffffff;
   --muted: rgba(255, 255, 255, 0.68);
   --muted-2: rgba(255, 255, 255, 0.45);
@@ -49,9 +49,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ---------- Utilities ---------- */
-.grad { color: var(--white); font-weight: 500; }
-/* naranja reservado para destacar la oferta, no los titulares */
-.grad--accent { color: var(--orange); }
+.grad { color: var(--orange); font-weight: 500; }
 .eyebrow {
   display: inline-flex; align-items: center; gap: 9px;
   font-size: 0.72rem; font-weight: 500;
@@ -110,7 +108,7 @@ a { color: inherit; text-decoration: none; }
 }
 .nav.scrolled { padding: 12px 32px; }
 .nav.scrolled .nav__inner {
-  background: rgba(34,34,34,0.8); backdrop-filter: blur(18px);
+  background: rgba(0,0,0,0.82); backdrop-filter: blur(18px);
   border-color: var(--line); box-shadow: 0 10px 40px -20px rgba(0,0,0,0.8);
 }
 .nav__links { display: flex; gap: 36px; }
@@ -195,7 +193,7 @@ a { color: inherit; text-decoration: none; }
 }
 .service::after {
   content:''; position:absolute; inset:0; z-index:1; opacity: 0;
-  background: linear-gradient(180deg, rgba(20,20,20,0.35), rgba(20,20,20,0.92));
+  background: linear-gradient(180deg, rgba(0,0,0,0.35), rgba(0,0,0,0.92));
   transition: opacity 0.6s ease;
 }
 .service:hover { transform: translateY(-6px); border-color: var(--orange); box-shadow: 0 30px 60px -30px rgba(0,0,0,0.8); }
@@ -262,7 +260,7 @@ a { color: inherit; text-decoration: none; }
 .about__media:hover img { transform: scale(1.04); }
 .about__badge {
   position: absolute; left: 20px; bottom: 20px; padding: 14px 22px; border-radius: var(--radius);
-  background: rgba(34,34,34,0.78); backdrop-filter: blur(16px); border: 1px solid var(--line-2);
+  background: rgba(0,0,0,0.8); backdrop-filter: blur(16px); border: 1px solid var(--line-2);
   display: flex; flex-direction: column;
 }
 .about__badge strong { font-size: 1.1rem; font-weight: 500; letter-spacing: -0.02em; }
