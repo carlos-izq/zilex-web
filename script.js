@@ -29,25 +29,6 @@ document.querySelectorAll('.service[data-img]').forEach((s) => {
   s.style.setProperty('--bg-img', `url("${s.dataset.img}")`);
 });
 
-/* ---- Cursor glow ---- */
-const glow = document.querySelector('.cursor-glow');
-let gx = 0, gy = 0, cx = 0, cy = 0;
-const fine = window.matchMedia('(pointer: fine)').matches;
-if (fine) {
-  window.addEventListener('mousemove', (e) => {
-    gx = e.clientX; gy = e.clientY;
-    glow.style.opacity = '0.6';
-  });
-  const animateGlow = () => {
-    cx += (gx - cx) * 0.12;
-    cy += (gy - cy) * 0.12;
-    glow.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-    requestAnimationFrame(animateGlow);
-  };
-  animateGlow();
-  document.addEventListener('mouseleave', () => (glow.style.opacity = '0'));
-}
-
 /* ---- Band móvil: auto-scroll continuo, se pausa al tocar/deslizar con el dedo ---- */
 (() => {
   const rows = document.querySelectorAll('.band__mobile-only');
