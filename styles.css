@@ -167,15 +167,34 @@ a { color: inherit; text-decoration: none; }
 .hero__scroll-line::after { content:''; position:absolute; top:-50%; left:0; width:100%; height:50%; background: var(--white); animation: scrollDot 1.8s ease-in-out infinite; }
 @keyframes scrollDot { 0%{top:-50%} 100%{top:100%} }
 
-/* =================== BAND (galería en movimiento) =================== */
-.band { padding: 30px 0 90px; display: flex; flex-direction: column; gap: 16px; overflow: hidden; }
-.band__row { display: flex; gap: 16px; width: max-content; }
-.band__row--single { animation: bandLeft 77s linear infinite; }
-.band__mobile-only { display: none; }
-.band__img { width: 260px; height: 360px; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); flex-shrink: 0; position: relative; background: var(--bg-2); }
-.band__img img { transition: transform 0.7s var(--ease); }
-.band__img:hover img { transform: scale(1.06); }
-@keyframes bandLeft { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+/* =================== CLIENTES (franja de logos) =================== */
+.clients { padding: 40px 0 86px; overflow: hidden; }
+.clients__lead {
+  text-align: center; font-size: 0.78rem; font-weight: 300; color: var(--muted-2);
+  letter-spacing: 0.02em; margin: 0 auto 38px; max-width: 520px; padding: 0 24px; line-height: 1.6;
+}
+.clients__marquee {
+  overflow: hidden;
+  /* difuminado en los bordes para que entren y salgan sin corte seco */
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+}
+.clients__track {
+  display: flex; align-items: center; gap: 90px; width: max-content;
+  animation: clientsScroll 50s linear infinite;
+}
+.clients__track img {
+  flex-shrink: 0; opacity: 0.58; height: auto;
+  transition: opacity 0.45s var(--ease);
+}
+.clients__track img:hover { opacity: 1; }
+/* los webp se exportan a 3x; cada ancho conserva el equilibrio optico entre marcas */
+.clients__logo--sirene { width: 81px; }
+.clients__logo--breuninger { width: 110px; }
+.clients__logo--malvar { width: 143px; }
+.clients__logo--pierre { width: 96px; }
+.clients__logo--lafolie { width: 79px; }
+@keyframes clientsScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* =================== SERVICES =================== */
 .services { padding: 110px 32px; max-width: var(--maxw); margin: 0 auto; }
@@ -344,17 +363,10 @@ a { color: inherit; text-decoration: none; }
   .cta { padding: 100px 20px; }
   .footer { padding: 70px 20px 36px; }
 
-  /* Banda en móvil: auto-scroll continuo (JS) que se pausa al tocar/deslizar */
-  .band__img { width: 183px; height: 259px; }
-  .band__desktop-only { display: none; }
-  .band__mobile-only {
-    display: flex;
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-  }
-  .band__mobile-only::-webkit-scrollbar { display: none; }
+  /* Franja de clientes: algo mas compacta en movil */
+  .clients { padding: 20px 0 64px; }
+  .clients__track { gap: 58px; }
+  .clients__track img { transform: scale(0.88); transform-origin: center; }
 
   /* Servicios: tarjetas que se apilan al hacer scroll (estilo Framer) */
   .services__grid { display: block; }
