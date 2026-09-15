@@ -176,15 +176,24 @@ a { color: inherit; text-decoration: none; }
 .clients__marquee {
   overflow: hidden;
   /* difuminado en los bordes para que entren y salgan sin corte seco */
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 9%, #000 91%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+/* En escritorio se acota la ventana a unos 3 logos. Al ser mas estrecha que el
+   ciclo de la cinta (914px), nunca coinciden en pantalla un logo y su duplicado. */
+@media (min-width: 721px) {
+  .clients__marquee {
+    max-width: 490px; margin: 0 auto;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+            mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
+  }
 }
 .clients__track {
   display: flex; align-items: center; gap: 90px; width: max-content;
   animation: clientsScroll 50s linear infinite;
 }
 .clients__track img {
-  flex-shrink: 0; opacity: 0.58; height: auto;
+  flex-shrink: 0; opacity: 0.82; height: auto;
   transition: opacity 0.45s var(--ease);
 }
 .clients__track img:hover { opacity: 1; }
