@@ -127,7 +127,7 @@ a { color: inherit; text-decoration: none; }
 .hero {
   position: relative; min-height: 100vh; display: flex;
   align-items: center; justify-content: center; text-align: center;
-  padding: 160px 24px 90px; overflow: hidden;
+  padding: 160px 24px 56px; overflow: hidden;
 }
 .hero__content { position: relative; z-index: 3; max-width: 1120px; }
 .hero__badge {
@@ -159,7 +159,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--muted); font-size: clamp(0.96rem, 1.4vw, 1.08rem); font-weight: 300;
   max-width: 600px; margin: 0 auto 40px; line-height: 1.75;
 }
-.hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+.hero__cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 24px; }
 
 .hero__scroll { display: none; position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%); z-index: 3; flex-direction: column; align-items: center; gap: 10px; }
 .hero__scroll span { font-size: 0.66rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--muted-2); }
@@ -168,10 +168,10 @@ a { color: inherit; text-decoration: none; }
 @keyframes scrollDot { 0%{top:-50%} 100%{top:100%} }
 
 /* =================== CLIENTES (franja de logos) =================== */
-.clients { padding: 40px 0 86px; overflow: hidden; }
+.clients { padding: 10px 0 86px; overflow: hidden; }
 .clients__lead {
-  text-align: center; font-size: 0.78rem; font-weight: 300; color: var(--muted-2);
-  letter-spacing: 0.02em; margin: 0 auto 38px; max-width: 520px; padding: 0 24px; line-height: 1.6;
+  text-align: center; font-size: 0.92rem; font-weight: 300; color: var(--muted-2);
+  letter-spacing: 0.01em; margin: 0 auto 38px; max-width: 580px; padding: 0 24px; line-height: 1.6;
 }
 .clients__marquee {
   overflow: hidden;
@@ -183,7 +183,7 @@ a { color: inherit; text-decoration: none; }
    ciclo de la cinta (914px), nunca coinciden en pantalla un logo y su duplicado. */
 @media (min-width: 721px) {
   .clients__marquee {
-    max-width: 588px; margin: 0 auto;
+    max-width: min(950px, 76vw); margin: 0 auto;
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
             mask-image: linear-gradient(90deg, transparent, #000 20%, #000 80%, transparent);
   }
@@ -368,14 +368,14 @@ a { color: inherit; text-decoration: none; }
   .nav { padding: 14px 16px; }
   .nav__links { display: none; }
   .nav.scrolled { padding: 10px 16px; }
-  .hero { padding: 140px 20px 70px; }
+  .hero { padding: 140px 20px 44px; }
   .services, .about, .camp { padding: 80px 18px; }
   .camp__grid { gap: 8px; }
   .cta { padding: 100px 20px; }
   .footer { padding: 70px 20px 36px; }
 
   /* Franja de clientes: algo mas compacta en movil */
-  .clients { padding: 20px 0 64px; }
+  .clients { padding: 4px 0 64px; }
   .clients__track { gap: 58px; }
   .clients__track img { transform: scale(0.88); transform-origin: center; }
 
